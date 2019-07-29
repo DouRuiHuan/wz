@@ -1,31 +1,29 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+
     </div>
-    <router-view/>
+    <transition  name="v" model="out-in" enter-active-class="animated fadeIn" leave-active-class="animated fadeout">
+        <router-view/>
+    </transition>
+  
   </div>
 </template>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+*{ margin: 0; padding: 0; }
+body{
+  font-size: .75rem;
+  background: #f8f8f8;
 }
-#nav {
-  padding: 30px;
+a{
+  text-decoration: none;
+  color: #333;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+ul li,ol li{
+  list-style: none;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+img{
+  display: block;
 }
 </style>
